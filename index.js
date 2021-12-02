@@ -26,9 +26,10 @@ app.use(bodyParser.json())
 app.get('/', async function (req, res) {
     res.render('index')
 })
+
 app.get('/validation',  async function (req, res) {
     res.render('validation', {
-        layout: 'validation',
+        layout: 'model',
     })
 })
 
