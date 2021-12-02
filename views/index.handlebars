@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<span class = "intro-text">
+  Learn how to fold origami animals in a fun and easy step by step way.
+</span>
+<span class = "intro-text">
+Complete levels to earn badges.
+</span>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="dog">
-<img src="" alt="dog" srcset="">
-    </div>
-    <div class="fish">
-
-    </div>
-    <div class="fox">
-
-    </div>
-    <button>
-        <a href="validation.html">validation</a>
-    </button>
-</body>
-
-</html>
+<div class="all-animals">
+{{#each animal}}
+  <div class='{{this.name}}'>
+    {{#if this.locked}}
+    <a class="level locked button">Level {{this.id}}
+      <img class="badge" src="/badge.svg"/>
+       </a>
+{{else}}
+    <a class="level button" href="/level/{{this.id}}/{{this.name}}">Level {{this.id}}
+    {{#if this.completed}}
+    <img class="completed badge" src="/{{this.name}}-badge.svg"/>
+    {{else}}
+     <img class="badge" src="/badge.svg"/>
+    {{/if}}
+    {{/if}}
+    </a>
+  </div>
+{{/each}}
+</div>
