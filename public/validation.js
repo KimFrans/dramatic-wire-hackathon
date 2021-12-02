@@ -9,6 +9,7 @@ setTimeout(() => {
 }, 12000)
 let success = false;
 let matchCount = 0;
+const targetAnimal = document.querySelector('.animal').id
 
 let model, webcam, labelContainer, maxPredictions;
 
@@ -42,9 +43,11 @@ async function loop() {
     webcam.update(); // update the webcam frame
     await predict();
     if (success) {
-        alert('success');
+        localStorage.setItem('completed', targetAnimal);
+        console.log(localStorage.getItem('completed'));
+        window.location.href = `/${targetAnimal}/success`;
     } else if(timer) {
-        alert('stopped')
+        window.location.href = `/${targetAnimal}/not-found`;
     } else {
         myReq = window.requestAnimationFrame(loop);
     }
@@ -53,7 +56,7 @@ async function loop() {
 // run the webcam image through the image model
 async function predict() {
     // predict can take in an image, video or canvas html element
-    const targetAnimal = document.querySelector('.animal').id
+    
     const prediction = await model.predict(webcam.canvas);
     
     const results = {
@@ -75,7 +78,6 @@ async function predict() {
             }
         }
     }
-    console.log(bestMatch);
     if(bestMatch == targetAnimal) {
         matchCount++;
     } else {
@@ -84,7 +86,6 @@ async function predict() {
     if (matchCount == 30) {
         success = true;
     }
-    console.log(success);
 }
 
 init();

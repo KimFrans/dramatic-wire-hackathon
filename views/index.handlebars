@@ -1,9 +1,26 @@
+<span class = "intro-text">
+  Learn how to fold origami animals in a fun and easy step by step way.
+</span>
+<span class = "intro-text">
+Complete levels to earn badges.
+</span>
+
 <div class="all-animals">
 {{#each animal}}
   <div class='{{this.name}}'>
-    <a href="/{{this.name}}/step/1"><img src='/{{this.name}}.jpg' alt='{{this.name}}' srcset='' /></a>
-    <a href="/{{this.name}}/step/1">Level {{this.id}}</a>
-    <h2>{{this.name}}</h2>
+    {{#if this.locked}}
+    <a class="level locked button">Level {{this.id}}
+      <img class="badge" src="/badge.svg"/>
+       </a>
+{{else}}
+    <a class="level button" href="/level/{{this.id}}/{{this.name}}">Level {{this.id}}
+    {{#if this.completed}}
+    <img class="completed badge" src="/{{this.name}}-badge.svg"/>
+    {{else}}
+     <img class="badge" src="/badge.svg"/>
+    {{/if}}
+    {{/if}}
+    </a>
   </div>
 {{/each}}
 </div>
