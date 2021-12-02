@@ -1,0 +1,161 @@
+html {
+  background-color: #BBDEDF
+}
+
+* {
+  font-family: 'Nanum Gothic', sans-serif;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: auto auto;
+  width:100%;
+  align-content: start;
+}
+
+a {
+  text-decoration:none;
+  text-align:center;
+  color: unset;
+}
+
+.app-name {
+  grid-column: 2/3;
+  grid-row: 1;
+  height:fit-content;
+}
+
+.container {
+  grid-column: 2/3;
+  grid-row: 2;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  text-align:center;
+  font-family: 'Handlee', cursive;
+  margin: revert;
+
+}
+
+.all-animals {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+}
+
+.all-animals img {
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #342419;
+}
+
+.all-animals div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  justify-items: center;
+  align-content: center;
+  row-gap: 1em;
+}
+
+button {
+  width:fit-content;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 60px auto 60px;
+  grid-template-rows: auto auto auto;
+  justify-items:center;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-self: center;
+}
+
+.steps span {
+ grid-column: span 3;
+ grid-row: 1 /2;
+ font-size: 1.5em;
+ text-align: center;
+ width: 500px;
+}
+
+.steps img {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 100%;
+  max-width: 620px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #342419;
+}
+
+.arrow img {
+  width: 60px;
+  box-shadow: none;
+}
+
+.arrow {
+  grid-row: 2;
+}
+
+.next {
+  grid-column: 3;
+}
+
+.check {
+  grid-row: 3;
+  grid-column: span 3;
+  font-size: 1.5em;
+}
+
+.loader {
+    width: 20px;
+    height: 20px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    background-color: white;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#webcam-container {
+  display: grid;
+  justify-items: center;
+  row-gap: 20px;
+} 

@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="dog">
-        <img src="" alt="dog" srcset="">
-        <button>Try</button>
-    </div>
-    <div class="fish">
-
-    </div>
-    <div class="fox">
-
-    </div>
-    <button>
-        <a href="validation.html">validation</a>
-    </button>
-</body>
-
-</html>
+<div class="all-animals">
+{{#each animal}}
+  <div class='{{this.name}}'>
+    <a href="/{{this.name}}/step/1"><img src='/{{this.name}}.jpg' alt='{{this.name}}' srcset='' /></a>
+    <a href="/{{this.name}}/step/1">Level {{this.id}}</a>
+    <h2>{{this.name}}</h2>
+  </div>
+{{/each}}
+</div>
