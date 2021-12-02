@@ -1,0 +1,13 @@
+<div class="steps">
+<span>{{instruction}}</span>
+<img src="/gifs/{{animal}}/{{animal}}-{{step}}.gif">
+{{#if prev}}
+<a class="arrow" href="{{prev}}"><img src="/prev.svg"></a>
+{{/if}}
+{{#if next}}
+<a class="arrow next" href="{{next}}"><img src="/next.svg"></a>
+{{else}}
+<a class="check" href="/{{animal}}/validation">Is it a {{animal}}?</a>
+{{/if}}
+
+</div>
