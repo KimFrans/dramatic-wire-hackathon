@@ -13,9 +13,9 @@ const connectionString =
   process.env.DATABASE_URL || 'postgresql://localhost:5432/origami';
 const pool = new Pool({
   connectionString,
-	  ssl: {
-    rejectUnauthorized: false,
-  },
+// 	  ssl: {
+//     rejectUnauthorized: false,
+//   },
 });
 
 const origamiService = OrigamiService(pool);
